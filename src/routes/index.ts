@@ -5,6 +5,7 @@
 
 import express, { Request , Response } from 'express';
 import helloRouter from './HelloRouter';
+import byeRouter from './ByeRouter';
 import { LogInfo } from '../utils/logger';
 
 
@@ -31,6 +32,7 @@ rootRouter.get('/', ( req : Request , res : Response) => {
 
 server.use('/',rootRouter);
 server.use('/hello',helloRouter);
+server.use('/goodbye',byeRouter);
 
 //Add more routes to the app
 
