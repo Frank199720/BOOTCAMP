@@ -28,7 +28,29 @@ app.get('/hello', ( req : Request , res : Response) => {
 
     //Send Hello World
 
-    res.send(`GET Hellooooo`);
+    const { name = 'anónimo' } = req.query;
+
+    
+
+    res.status(200).json({
+        data: {
+            message: `Hola, ${name}` 
+        }
+    })
+
+});
+
+//First Route
+
+app.get('/question1', ( req : Request , res: Response)=>{
+
+    //Send JSON format response
+
+    res.status(200).json({
+        data: {
+            message: 'Goodbye, world'
+        }
+    })
 
 });
 
